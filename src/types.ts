@@ -22,7 +22,8 @@ export interface BrandConfig {
     realismRange: number; // 0-100
     noTextInImages: boolean;
 
-    logoBase64: string | null; // Changed from image to logoBase64 and made essential
+    logoBase64: string | null;
+    platforms: string[]; // Added back
 }
 
 export interface ContentRequest {
@@ -30,7 +31,7 @@ export interface ContentRequest {
     platform: Platform;
     format: Format;
     pillar: string;
-    keywords: string; // Changed to string for simple input
+    keywords: string;
     eventDate?: string;
     intent: Intent;
     cta: Cta;
@@ -43,7 +44,6 @@ export interface GeneratedContent {
     prompt_text: string;
     prompt_image: string;
     metadata: any;
-    // New fields for the strict JSON output
     finalJson: any;
 }
 
@@ -60,4 +60,5 @@ export const initialBrandConfig: BrandConfig = {
     realismRange: 50,
     noTextInImages: true,
     logoBase64: null,
+    platforms: [],
 };
