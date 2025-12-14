@@ -70,7 +70,9 @@ export function BrandConfigForm({ initialData, onSave, onCancel }: Props) {
             }
             const reader = new FileReader();
             reader.onloadend = () => {
-                handleChange('logoBase64', reader.result as string);
+                const base64 = reader.result as string;
+                handleChange('logoBase64', base64);
+                localStorage.setItem('evx.brandLogo.v1', base64);
             };
             reader.readAsDataURL(file);
         }

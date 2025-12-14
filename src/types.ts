@@ -41,10 +41,10 @@ export interface ContentRequest {
 }
 
 export interface GeneratedContent {
-    prompt_text: string;
-    prompt_image: string;
+    prompt_text: string; // Prompt used
+    prompt_image: string; // Image prompt used
     metadata: any;
-    finalJson: any;
+    finalJson: any; // Contains brand and request with base64 images
 }
 
 export const initialBrandConfig: BrandConfig = {
